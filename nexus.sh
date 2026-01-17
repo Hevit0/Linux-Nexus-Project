@@ -4,6 +4,8 @@ RED='\e[0;31m'
 YELLOW='\e[1;33m'
 NC='\e[0m' 
 
+LOG_FILE="nexus_history.log"
+
 show_header() {
     clear
     echo -e "${CYAN}==============================================${NC}"
@@ -51,8 +53,20 @@ execute_module() {
     "$MODULE_PATH" "$@"
     
     local EXIT_CODE=$?
+   
+
+    TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+
+    if [ $EXIT_CODE -eq 0 ]; then
+    #modificare cu tee
+       echo -e "[$TIMESTAMP] Executed : $(basename "$MODULE_PATH") | Status: SUCCESS (Exit Code: $EXIT_CODE)" >> "$LOG_FILE"
+    else
+        echo -e "[$TIMESTAMP] Executed : $(basename "$MODULE_PATH") | Status: FAILURE (Exit Code: $EXIT_CODE)" >> "$LOG_FILE"
+    fi
+
     sleep 1
     read -p "Press [Enter] to return to Nexus Menu."
+
     return $EXIT_CODE
 }
 
@@ -74,9 +88,9 @@ while true; do
             execute_module "./modules/breach_detector.sh" "$LOG_FILE" 
             ;;
         4) 
-            read -p "Enter source directory: " SRC_DIR
+            read -p "Enter source directory: " SOURCE_DIR
             read -p "Enter destination directory: " BACKUP_DIR
-            execute_module "./modules/smart_backup.sh" "$SRC_DIR" "$BACKUP_DIR" 
+            execute_module "./modules/smart_backup.sh" "$SOURCE_DIR" "$BACKUP_DIR" 
             ;;
         5) 
             read -p "Enter the path to user data file: " USER_DATA_FILE
