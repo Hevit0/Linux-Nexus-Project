@@ -60,7 +60,7 @@ Nexus uses a **Modular Core** design:
 ## Installation & Usage
 1. **Clone the repository** (this creates a folder named 'linux-nexus-project'):
 ```bash
-git clone [[https://github.com/Hevit0/nexus-admin-console.git](https://github.com/Hevit0/nexus-admin-console.git)]
+git clone [[https://github.com/Hevit0/linux-nexus-project.git](https://github.com/Hevit0/linux-nexus-project.git)]
 ```
 2.**Navigate to the project:**
 ```bash
