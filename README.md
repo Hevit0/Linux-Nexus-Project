@@ -58,13 +58,13 @@ Nexus uses a **Modular Core** design:
 -Permissions to execute scripts.
 
 ## Installation & Usage
-1. **Clone the repository** (this creates a folder named 'linux-nexus-project'):
+1. **Clone the repository** (this creates a folder named 'Linux-Nexus-Project'):
 ```bash
-git clone [[https://github.com/Hevit0/linux-nexus-project.git](https://github.com/Hevit0/linux-nexus-project.git)]
+git clone https://github.com/Hevit0/Linux-Nexus-Project.git
 ```
 2.**Navigate to the project:**
 ```bash
-cd linux-nexus-project
+cd Linux-Nexus-Project
 ```
 3.**Make the orchestrator executale**(if needed):
 ```bash
