@@ -58,13 +58,13 @@ Nexus uses a **Modular Core** design:
 -Permissions to execute scripts.
 
 ## Installation & Usage
-1. **Clone the repository** (this creates a folder named 'nexus-admin-console'):
+1. **Clone the repository** (this creates a folder named 'linux-nexus-project'):
 ```bash
 git clone [[https://github.com/Hevit0/nexus-admin-console.git](https://github.com/Hevit0/nexus-admin-console.git)]
 ```
 2.**Navigate to the project:**
 ```bash
-cd nexus-admin-console
+cd linux-nexus-project
 ```
 3.**Make the orchestrator executale**(if needed):
 ```bash
